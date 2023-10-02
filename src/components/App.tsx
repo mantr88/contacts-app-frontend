@@ -1,7 +1,7 @@
 import { Route, Routes } from "react-router-dom";
-import MainLoyaut from "./loyouts/MainLoyout/MainLoyout";
-import Contacts from "./pages/Contacts";
-import AddNewContact from "./pages/AddNewContact";
+import MainLoyaut from "../loyouts/MainLoyout/MainLoyout";
+import Contacts from "../pages/Contacts";
+import AddNewContact from "../pages/AddNewContact";
 
 function App() {
   return (
