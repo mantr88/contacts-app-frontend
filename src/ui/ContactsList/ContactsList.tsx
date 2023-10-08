@@ -9,7 +9,7 @@ export const ContactList = () => {
     <>
       <>
         {visibleContacts.map((contact) => (
-          <ContactCard key={contact.id} contact={contact} />
+          <ContactCard key={contact._id} contact={contact} />
         ))}
       </>
     </>

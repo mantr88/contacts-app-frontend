@@ -49,6 +49,7 @@ const Register = () => {
             value={name}
             onChange={handleChange}
             placeholder="Enter your name"
+            autoComplete="name"
           />
         </label>
         <label>
@@ -59,6 +60,7 @@ const Register = () => {
             value={email}
             onChange={handleChange}
             placeholder="Enter your email"
+            autoComplete="email"
           />
         </label>
         <label>
@@ -69,6 +71,7 @@ const Register = () => {
             value={password}
             onChange={handleChange}
             placeholder="Enter your password"
+            autoComplete="password"
           />
         </label>
         <Link to="contacts-app-frontend/login">Go to Log in</Link>
