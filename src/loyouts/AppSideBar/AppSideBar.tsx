@@ -17,10 +17,7 @@ const AppSideBar = () => {
         >
           Contacts
         </NavLink>
-        <NavLink
-          to={"/contacts-app-frontend/add/"}
-          style={{ marginBottom: 20 }}
-        >
+        <NavLink to={"/contacts-app-frontend/add"} style={{ marginBottom: 20 }}>
           New contact
         </NavLink>
         {isLoggedIn ? <UserMenu /> : <AuthNav />}

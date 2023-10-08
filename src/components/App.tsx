@@ -34,16 +34,17 @@ function App() {
             }
           />
           <Route
-            path="contacts-app-frontend/contacts"
+            path="/contacts-app-frontend/contacts"
             element={
               <PrivateRoute>
                 <Contacts />
+                {/* <div>Contacts page</div> */}
               </PrivateRoute>
             }
           />
 
           <Route
-            path="/contacts-app-frontend/add/"
+            path="/contacts-app-frontend/add"
             element={
               <PrivateRoute>
                 <AddNewContact />
