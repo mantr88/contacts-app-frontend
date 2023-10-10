@@ -13,24 +13,7 @@ import Grid from "@mui/material/Grid";
 import LockOutlinedIcon from "@mui/icons-material/LockOutlined";
 import Typography from "@mui/material/Typography";
 import { login } from "../../redux/auth/auth-operations";
-
-function Copyright(props: any) {
-  return (
-    <Typography
-      variant="body2"
-      color="text.secondary"
-      align="center"
-      {...props}
-    >
-      {"Copyright © "}
-      <Link color="inherit" href="https://mui.com/">
-        Your Website
-      </Link>{" "}
-      {new Date().getFullYear()}
-      {"."}
-    </Typography>
-  );
-}
+import Copyright from "../../ui/Copyright/Copyright";
 
 export default function SignUp() {
   const dispatch = useDispatch();
@@ -101,7 +84,7 @@ export default function SignUp() {
             <LockOutlinedIcon />
           </Avatar>
           <Typography component="h1" variant="h5">
-            Sign in
+            Sign up
           </Typography>
           <Box
             component="form"
@@ -150,15 +133,13 @@ export default function SignUp() {
               variant="contained"
               sx={{ mt: 3, mb: 2 }}
             >
-              Sign In
+              Sign Up
             </Button>
             <Grid container>
               <Grid item>
-                {/* <Link href="#" variant="body2"> */}
                 <NavLink to="/contacts-app-frontend/login">
                   {"Do you have an account? Sign In"}
                 </NavLink>
-                {/* </Link> */}
               </Grid>
             </Grid>
             <Copyright sx={{ mt: 5 }} />

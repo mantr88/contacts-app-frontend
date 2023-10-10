@@ -51,7 +51,7 @@ function App() {
             }
           />
         </Route>
-        {/* <Route path="*" element={<Navigate to="/contacts-app-frontend/" />} /> */}
+        <Route path="*" element={<Navigate to="/contacts-app-frontend/" />} />
       </Routes>
     </>
   );

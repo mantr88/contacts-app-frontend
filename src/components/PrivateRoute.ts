@@ -9,7 +9,7 @@ export const PrivateRoute = ({ children }: RouteProps) => {
   const navigate = useNavigate();
   useEffect(() => {
     if (!isLoggedIn) {
-      navigate("contacts-app-frontend/login");
+      navigate("/contacts-app-frontend/login");
     }
   }, [isLoggedIn, navigate]);
 

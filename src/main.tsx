@@ -15,14 +15,14 @@ const defaultTheme = createTheme();
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
   <React.StrictMode>
-    <ThemeProvider theme={defaultTheme}>
-      <PersistGate loading={null} persistor={persistor}>
-        <BrowserRouter>
+    <BrowserRouter>
+      <ThemeProvider theme={defaultTheme}>
+        <PersistGate loading={null} persistor={persistor}>
           <Provider store={store}>
             <App />
           </Provider>
-        </BrowserRouter>
-      </PersistGate>
-    </ThemeProvider>
+        </PersistGate>
+      </ThemeProvider>
+    </BrowserRouter>
   </React.StrictMode>
 );
