@@ -5,7 +5,6 @@ import { PublicRoute } from "./PublicRoute";
 import { PrivateRoute } from "./PrivateRoute";
 import { lazy } from "react";
 
-const Welcome = lazy(() => import("../pages/Welcome"));
 const Register = lazy(() => import("../pages/Register"));
 const Login = lazy(() => import("../pages/Login"));
 const Contacts = lazy(() => import("../pages/Contacts"));
@@ -15,13 +14,12 @@ function App() {
     <>
       <Routes>
         <Route path="/contacts-app-frontend/" element={<MainLoyaut />}>
-          <Route index element={<Contacts />} />
           <Route
-            path="/contacts-app-frontend/register"
+            index
             element={
-              <PublicRoute>
-                <Register />
-              </PublicRoute>
+              <PrivateRoute>
+                <Contacts />
+              </PrivateRoute>
             }
           />
           <Route
@@ -33,15 +31,13 @@ function App() {
             }
           />
           <Route
-            path="/contacts-app-frontend/contacts"
+            path="/contacts-app-frontend/register"
             element={
-              <PrivateRoute>
-                <Contacts />
-                {/* <div>Contacts page</div> */}
-              </PrivateRoute>
+              <PublicRoute>
+                <Register />
+              </PublicRoute>
             }
           />
-
           <Route
             path="/contacts-app-frontend/add"
             element={

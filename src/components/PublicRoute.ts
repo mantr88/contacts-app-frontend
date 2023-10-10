@@ -9,7 +9,7 @@ export const PublicRoute = ({ children }: RouteProps) => {
 
   useEffect(() => {
     if (isLoggedIn) {
-      navigate("/contacts-app-frontend/contacts");
+      navigate("/contacts-app-frontend/");
     }
   }, [isLoggedIn, navigate]);
 

@@ -12,10 +12,10 @@ const MainLoyaut = () => {
   return (
     <div>
       {isLoggedIn && <Header />}
-      {isLoggedIn && <AppSideBar />}
-      <Suspense fallback={<div>LOADING...</div>}>
+      {/* {isLoggedIn && <AppSideBar />} */}
+      {/* <Suspense fallback={<div>LOADING...</div>}>
         <Outlet />
-      </Suspense>
+      </Suspense> */}
       {isLoggedIn && <Footer />}
     </div>
   );
