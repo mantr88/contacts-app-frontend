@@ -17,16 +17,15 @@ function App() {
         <Route path="/contacts-app-frontend/" element={<MainLoyaut />}>
           <Route index element={<Welcome />} />
           <Route
-            path="contacts-app-frontend/register"
+            path="/contacts-app-frontend/register"
             element={
               <PublicRoute>
                 <Register />
               </PublicRoute>
             }
           />
-
           <Route
-            path="contacts-app-frontend/login"
+            path="/contacts-app-frontend/login"
             element={
               <PublicRoute>
                 <Login />
@@ -52,7 +51,7 @@ function App() {
             }
           />
         </Route>
-        <Route path="*" element={<Navigate to="/contacts-app-frontend/" />} />
+        {/* <Route path="*" element={<Navigate to="/contacts-app-frontend/" />} /> */}
       </Routes>
     </>
   );

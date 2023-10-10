@@ -8,9 +8,9 @@ import { UserMenu } from "../../components/UserMenu/UserMenu";
 const AppSideBar = () => {
   const isLoggedIn = useSelector(selectIsLoggedIn);
   return (
-    <div className={css.sidebar}>
+    <div>
       AppSideBar
-      <div style={{ display: "flex", flexDirection: "column", gap: 20 }}>
+      <div>
         <NavLink
           to={"/contacts-app-frontend/contacts"}
           style={{ marginTop: 20 }}

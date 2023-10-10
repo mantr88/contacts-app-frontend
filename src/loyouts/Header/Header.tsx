@@ -3,7 +3,7 @@ import css from "../MainLoyout/MainLoyout.module.css";
 
 export const Header = () => {
   return (
-    <div className={css.header}>
+    <div>
       Header
       <Filter />
     </div>
