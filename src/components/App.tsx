@@ -15,7 +15,7 @@ function App() {
     <>
       <Routes>
         <Route path="/contacts-app-frontend/" element={<MainLoyaut />}>
-          <Route index element={<Welcome />} />
+          <Route index element={<Contacts />} />
           <Route
             path="/contacts-app-frontend/register"
             element={
