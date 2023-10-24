@@ -4,9 +4,9 @@ import { useDispatch } from "react-redux";
 import { fetchContacts } from "../redux/operations";
 const Contacts = () => {
   const dispatch = useDispatch();
-  useEffect(() => {
-    dispatch(fetchContacts());
-  }, [dispatch]);
+  // useEffect(() => {
+  //   dispatch(fetchContacts());
+  // }, [dispatch]);
   return (
     <div>
       Contacts page
