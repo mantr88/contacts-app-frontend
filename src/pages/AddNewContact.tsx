@@ -5,15 +5,42 @@ import {
   SaveOutlined,
 } from "@mui/icons-material";
 import { Box, Button, TextField } from "@mui/material";
+import { useState } from "react";
 
 const AddNewContact = () => {
-  const btnSubmitHandle = (evt: React.FormEvent) => {
+  const [email, setEmail] = useState("");
+  const [name, setName] = useState("");
+  const [phone, setPhone] = useState("");
+  const [emailError, setEmailError] = useState(false);
+  const [nameError, setNameError] = useState(false);
+  const [phoneError, setPhoneError] = useState(false);
+
+  const btnSubmitHandle = (evt: React.FormEvent<HTMLFormElement>) => {
     evt.preventDefault();
     console.log(evt);
+
+    setEmailError(false);
+    setNameError(false);
+    setPhoneError(false);
+
+    if (email == "") {
+      setEmailError(true);
+    }
+    if (name == "") {
+      setNameError(true);
+    }
+    if (phone == "") {
+      setPhoneError(true);
+    }
+
+    if (email && name && phone) {
+      console.log(email, name, phone);
+    }
   };
+
   return (
     <>
-      <form onSubmit={btnSubmitHandle}>
+      <form onSubmit={btnSubmitHandle} autoComplete="off">
         <Box
           sx={{ display: "flex", flexDirection: "column", gap: 4, width: 620 }}
         >
@@ -41,6 +68,11 @@ const AddNewContact = () => {
               variant="outlined"
               size="small"
               sx={{ width: "100%" }}
+              error={nameError}
+              onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
+                setName(e.target.value)
+              }
+              value={name}
             />
           </Box>
           <Box
@@ -57,6 +89,11 @@ const AddNewContact = () => {
               variant="outlined"
               size="small"
               sx={{ width: "100%" }}
+              error={emailError}
+              onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
+                setEmail(e.target.value)
+              }
+              value={email}
             />
           </Box>
           <Box
@@ -73,6 +110,11 @@ const AddNewContact = () => {
               variant="outlined"
               size="small"
               sx={{ width: "100%" }}
+              error={phoneError}
+              onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
+                setPhone(e.target.value)
+              }
+              value={phone}
             />
           </Box>
         </Box>
