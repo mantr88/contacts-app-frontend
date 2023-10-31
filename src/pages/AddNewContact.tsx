@@ -17,7 +17,6 @@ const AddNewContact = () => {
 
   const btnSubmitHandle = (evt: React.FormEvent<HTMLFormElement>) => {
     evt.preventDefault();
-    console.log(evt);
 
     setEmailError(false);
     setNameError(false);
@@ -38,6 +37,13 @@ const AddNewContact = () => {
     }
   };
 
+  const disabledBtn = () => {
+    if (email || name || phone) {
+      return false;
+    }
+    return true;
+  };
+
   return (
     <>
       <form onSubmit={btnSubmitHandle} autoComplete="off">
@@ -50,6 +56,7 @@ const AddNewContact = () => {
               startIcon={<SaveOutlined />}
               sx={{ borderRadius: "50px" }}
               type="submit"
+              disabled={disabledBtn()}
             >
               Save
             </Button>
@@ -69,9 +76,10 @@ const AddNewContact = () => {
               size="small"
               sx={{ width: "100%" }}
               error={nameError}
-              onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
-                setName(e.target.value)
-              }
+              onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
+                setName(e.target.value);
+                setNameError(false);
+              }}
               value={name}
             />
           </Box>
@@ -90,9 +98,10 @@ const AddNewContact = () => {
               size="small"
               sx={{ width: "100%" }}
               error={emailError}
-              onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
-                setEmail(e.target.value)
-              }
+              onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
+                setEmail(e.target.value);
+                setEmailError(false);
+              }}
               value={email}
             />
           </Box>
@@ -111,9 +120,10 @@ const AddNewContact = () => {
               size="small"
               sx={{ width: "100%" }}
               error={phoneError}
-              onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
-                setPhone(e.target.value)
-              }
+              onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
+                setPhone(e.target.value);
+                setPhoneError(false);
+              }}
               value={phone}
             />
           </Box>
