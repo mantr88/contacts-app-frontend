@@ -29,7 +29,7 @@ import InboxIcon from "@mui/icons-material/MoveToInbox";
 import MailIcon from "@mui/icons-material/Mail";
 import StarHalfIcon from "@mui/icons-material/StarHalf";
 import PersonAddAltIcon from "@mui/icons-material/PersonAddAlt";
-import { Outlet } from "react-router-dom";
+import { NavLink, Outlet } from "react-router-dom";
 
 const drawerWidth = 240;
 
@@ -306,26 +306,34 @@ export const Loyout = () => {
         </DrawerHeader>
         <List>
           {["New contact", "Favorite"].map((text, index) => (
-            <ListItem key={text} disablePadding sx={{ display: "block" }}>
-              <ListItemButton
-                sx={{
-                  minHeight: 48,
-                  justifyContent: open ? "initial" : "center",
-                  px: 2.5,
-                }}
-              >
-                <ListItemIcon
+            <NavLink
+              to={
+                index % 2 === 0
+                  ? "/contacts-app-frontend/add"
+                  : "/contacts-app-frontend/"
+              }
+            >
+              <ListItem key={text} disablePadding sx={{ display: "block" }}>
+                <ListItemButton
                   sx={{
-                    minWidth: 0,
-                    mr: open ? 3 : "auto",
-                    justifyContent: "center",
+                    minHeight: 48,
+                    justifyContent: open ? "initial" : "center",
+                    px: 2.5,
                   }}
                 >
-                  {index % 2 === 0 ? <PersonAddAltIcon /> : <StarHalfIcon />}
-                </ListItemIcon>
-                <ListItemText primary={text} sx={{ opacity: open ? 1 : 0 }} />
-              </ListItemButton>
-            </ListItem>
+                  <ListItemIcon
+                    sx={{
+                      minWidth: 0,
+                      mr: open ? 3 : "auto",
+                      justifyContent: "center",
+                    }}
+                  >
+                    {index % 2 === 0 ? <PersonAddAltIcon /> : <StarHalfIcon />}
+                  </ListItemIcon>
+                  <ListItemText primary={text} sx={{ opacity: open ? 1 : 0 }} />
+                </ListItemButton>
+              </ListItem>
+            </NavLink>
           ))}
         </List>
       </Drawer>
