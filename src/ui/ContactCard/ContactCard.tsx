@@ -21,6 +21,7 @@ export const ContactCard = ({ contact: { name, phone, _id } }: Props) => {
         onClick={() => dispatch(deleteContact(_id))}
         size="small"
         startIcon={<DeleteIcon />}
+        sx={{ color: "black", borderColor: "black" }}
       >
         Delete
       </Button>
